@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
+from rest_framework import routers 
+from django.views.generic import TemplateView
+import os
+
 
 from users.views.user_viewset import UserViewSet
 from users.views.post_viewset import PostViewSet
@@ -24,6 +27,8 @@ from users.views.comment_viewset import CommentViewSet
 from users.views.album_viewset import AlbumViewSet
 from users.views.photo_viewset import PhotoViewSet
 from users.views.todo_viewset import TodoViewSet
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -37,4 +42,12 @@ router.register(r'todos', TodoViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+      # Vue frontend ana sayfası
+    path('', TemplateView.as_view(template_name='index.html'), name='home'),
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(settings.BASE_DIR, 'static'))

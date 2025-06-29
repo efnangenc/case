@@ -1,7 +1,7 @@
 
 import axios from 'axios'
 
-const API_URL = 'https://jsonplaceholder.typicode.com'
+import { API_URL } from './apiConfig'
 
 export const getAlbumsByUser = async (userId) => {
   const response = await axios.get(`${API_URL}/users/${userId}/albums`)

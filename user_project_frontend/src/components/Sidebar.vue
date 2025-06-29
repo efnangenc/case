@@ -1,5 +1,5 @@
 <template>
-    <div :class="['bg-gray-800 text-white transition-all duration-300 min-h-screen', collapsed ? 'w-16' : 'w-64']">
+    <div :class="['bg-neutral-200 text-white transition-all duration-300 min-h-screen', collapsed ? 'w-16' : 'w-64']">
         <button class="p-2" @click="$emit('toggle')">☰</button>
 
 
@@ -10,7 +10,7 @@
                 <!-- Anasayfa için ikon + metin birlikte router-link içinde -->
                 <li v-if="isHomePage">
                     <router-link to="/"
-                        class="flex items-center space-x-3 px-4 py-2 text-purple-400 hover:bg-gray-700 rounded">
+                        class="flex items-center space-x-3 px-4 py-2 text-purple-400 hover:bg-neutral-300 rounded">
                         <UsersIcon class="h-6 w-6 text-gray-400" />
                         <span>Users</span>
                     </router-link>
