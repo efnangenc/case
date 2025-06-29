@@ -30,7 +30,7 @@
             <!-- Location başlığı ve ikon -->
             <div class="flex items-center space-x-2 mt-2 text-gray-500">
                <LocationIcon class="h-5 w-5 text-gray-400" />
-              <span class="font-bold">LocationnAmakısahalii:</span>
+              <span class="font-bold">Location:</span>
             </div>
             <p class="text-sm text-gray-500">{{ user.address.city }}</p>
 

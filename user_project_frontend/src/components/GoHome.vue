@@ -1,6 +1,6 @@
 
 <template>
-    <div class="mb-4">
+    <div class="mb-10">
 
         <router-link to="/" class="inline-flex items-center gap-2 text-blue-600 hover:underline">
             <LeftArrowIcon class="h-6 w-6 text-gray-400" />

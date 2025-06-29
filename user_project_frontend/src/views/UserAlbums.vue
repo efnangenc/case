@@ -4,7 +4,7 @@
       <GoHomeLink />
       <!-- <h2 class="text-xl font-bold mb-4">{{ userName }} - Albümler</h2> -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div v-for="album in albums" :key="album.id" class="border rounded-lg shadow bg-white p-4">
+        <div v-for="album in albums" :key="album.id" class="border rounded-lg shadow bg-white p-4 w-full aspect-square flex flex-col justify-between">
           <!-- Fotoğraf grid - 2x2 -->
           <div class="grid grid-cols-2 ">
 <!-- 
@@ -12,7 +12,7 @@
               <img :src="photo.url" alt="Fotoğraf" class="object-cover w-full h-full" />
             </div> -->
 
-            <div v-for="photo in album.photos" :key="photo.id" class="w-full h-24">
+            <div v-for="photo in album.photos" :key="photo.id" class="w-full h-48">
               <img :src="`https://picsum.photos/id/${photo.id}/150`" alt="Fotoğraf"
                 class="object-cover w-full h-full rounded" />
             </div>
