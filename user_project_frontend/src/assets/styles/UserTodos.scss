@@ -1,0 +1,12 @@
+.todos {
+  @apply space-y-5;
+}
+.item {
+  @apply flex items-center gap-5 mt-16 ml-8;
+  span {
+    @apply text-lg;
+  }
+}
+.checkbox{
+    @apply w-4 h-4 accent-purple-500
+}

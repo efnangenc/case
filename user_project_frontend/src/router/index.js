@@ -3,6 +3,7 @@ import UserList from '../views/UserList.vue'
 import UserTodos from '../views/UserTodos.vue'
 import UserPosts from '../views/UserPosts.vue'
 import UserAlbums from '../views/UserAlbums.vue'
+import AlbumDetail from '../views/AlbumDetail.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/user/:id/albums',
     name: 'UserAlbums',
     component: UserAlbums,
+  },
+  {
+    path: '/albums/:id',
+    name: 'AlbumDetail',
+    component: AlbumDetail
   },
 ]
 

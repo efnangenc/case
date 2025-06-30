@@ -1,0 +1,12 @@
+.home-button {
+  @apply inline-flex items-center gap-9;
+  span {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      @apply text-xl
+  }
+}
+.leftarrow-icon {
+  @apply h-9 w-9;
+}

@@ -1,0 +1,51 @@
+.modal{
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50
+}
+
+.modal-item{
+    @apply bg-white rounded-2xl shadow-md max-w-4xl h-4/6 p-6 relative flex flex-col
+}
+
+.close-icon{
+    @apply h-8 w-8 absolute top-10 right-6 
+}
+.modal-post-title{
+    @apply text-2xl font-bold mr-12
+}
+.contents{
+    @apply grid grid-cols-2 overflow-hidden 
+}
+
+.modal-post{
+    @apply overflow-y-auto px-6
+}
+
+.modal-post-body{
+    // @apply 
+}
+
+.comments{
+    @apply overflow-y-auto border-l-2 pl-6
+}
+
+.comments-title{
+    font-weight: 700;
+    @apply text-xl mb-4
+}
+
+.comment-item{
+    @apply space-y-4
+}
+
+.comment-user-icon{
+    @apply w-12 h-12
+}
+
+.comment-email{
+    font-weight: 600;
+    @apply text-base
+}
+
+.comment-body{
+    @apply text-sm
+}

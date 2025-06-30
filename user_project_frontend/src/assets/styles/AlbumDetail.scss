@@ -1,0 +1,21 @@
+.goAlbums {
+  @apply inline-flex items-center gap-9 
+}
+.goBack-button {
+     font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      @apply text-xl
+}
+.album-detail {
+  @apply p-6;
+}
+.album-details {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4;
+}
+.album-photo-item {
+  @apply w-full h-full;
+}
+.album-images {
+  @apply object-cover w-full h-full;
+}

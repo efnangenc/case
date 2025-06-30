@@ -1,0 +1,22 @@
+.posts{
+    @apply space-y-4
+}
+
+.post-item{
+    @apply p-8 gap-4 flex flex-col h-48
+}
+
+.post-title{
+    font-weight: 700;
+    @apply text-xl font-semibold
+}
+.post-body{
+    @apply text-lg w-2/5 break-words
+}
+.seemore-button{
+    font-weight: 600;
+    @apply mr-12 hover:underline text-xl self-end flex items-center gap-6
+}
+.rightarrow-icon{
+    @apply h-8 w-8
+}

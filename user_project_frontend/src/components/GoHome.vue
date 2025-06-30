@@ -1,9 +1,8 @@
-
 <template>
-    <div class="mb-10">
+    <div>
 
-        <router-link to="/" class="inline-flex items-center gap-2 text-blue-600 hover:underline">
-            <LeftArrowIcon class="h-6 w-6 text-gray-400" />
+        <router-link to="/" class="home-button">
+            <LeftArrowIcon class="leftarrow-icon" />
             <span>Go Home</span>
         </router-link>
 
@@ -12,4 +11,5 @@
 
 <script setup>
 import LeftArrowIcon from '../assets/icons/left-arrow.svg'
+import '../assets/styles/GoHomeButton.scss'
 </script>

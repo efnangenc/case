@@ -1,65 +1,55 @@
 <template>
-    <div :class="['bg-neutral-200 text-white transition-all duration-300 min-h-screen', collapsed ? 'w-16' : 'w-64']">
-        <button class="p-2" @click="$emit('toggle')">☰</button>
-
-
-
+    <div :class="['sidebar', collapsed ? 'sidebar-collapsed' : 'sidebar-expanded']">
+        <button class="toggle-button" @click="$emit('toggle')">☰</button>
 
         <nav v-if="!collapsed">
             <ul>
-                <!-- Anasayfa için ikon + metin birlikte router-link içinde -->
+                <!-- Anasayfadayken -->
                 <li v-if="isHomePage">
-                    <router-link to="/"
-                        class="flex items-center space-x-3 px-4 py-2 text-purple-400 hover:bg-neutral-300 rounded">
-                        <UsersIcon class="h-6 w-6 text-gray-400" />
+                    <router-link to="/" class="menu-link">
+                        <UsersIcon class="menu-icon" />
                         <span>Users</span>
                     </router-link>
                 </li>
 
-                <!-- Diğer sayfalarda gösterilecek menüler -->
+                <!-- Diğer sayfalardayken -->
                 <template v-else>
 
-                    <div v-if="user"
-                        class="flex flex-col sm:flex-row items-center sm:items-start p-5 rounded space-y-4 sm:space-y-0 sm:space-x-4">
-                        <img src="https://via.placeholder.com" alt="Avatar"
-                            class="w-12 h-12 rounded-full border flex-shrink-0" />
+                    <div v-if="user" class="user-info">
+                        <!-- <img src="https://via.placeholder.com" alt="Avatar"
+                            class="w-12 h-12 rounded-full border flex-shrink-0" /> -->
+                        <div>
+                            <UserIcon class="user-icon" />
+                        </div>
 
-                        <div class="flex-1 text-center sm:text-left">
-                            <p class="text-sm mb-2">{{ user.name }}</p>
-                            <p class="text-sm mb-2">{{ user.email }}</p>
+                        <div class="user-info-text">
+                            <p>{{ user.name }}</p>
+                            <p>{{ user.email }}</p>
                         </div>
                     </div>
                     <hr />
-                    <!-- <li>
-                        <router-link to="/" class="flex items-center space-x-3 px-4 py-2 hover:bg-gray-700 rounded">
-                            <UsersIcon class="h-6 w-6 text-gray-400" />
-                            <span>Ana Sayfa</span>
-                        </router-link>
-                    </li> -->
+                    <div class="menu">
+                        <li>
+                            <router-link :to="`/user/${userId}/todos`" class="menu-link">
+                                <TodosIcon class="menu-icon" />
+                                <span>Todos</span>
+                            </router-link>
+                        </li>
 
-                    <li>
-                        <router-link :to="`/user/${userId}/todos`"
-                            class="flex items-center space-x-3 px-4 py-2 hover:bg-gray-700 rounded">
-                            <TodosIcon class="h-6 w-6 text-gray-400" />
-                            <span>Todos</span>
-                        </router-link>
-                    </li>
+                        <li>
+                            <router-link :to="`/user/${userId}/posts`" class="menu-link">
+                                <PostsIcon class="menu-icon" />
+                                <span>Posts</span>
+                            </router-link>
+                        </li>
 
-                    <li>
-                        <router-link :to="`/user/${userId}/posts`"
-                            class="flex items-center space-x-3 px-4 py-2 hover:bg-gray-700 rounded">
-                            <PostsIcon class="h-6 w-6 text-gray-400" />
-                            <span>Posts</span>
-                        </router-link>
-                    </li>
-
-                    <li>
-                        <router-link :to="`/user/${userId}/albums`"
-                            class="flex items-center space-x-3 px-4 py-2 hover:bg-gray-700 rounded">
-                            <AlbumsIcon class="h-6 w-6 text-gray-400" />
-                            <span>Albums</span>
-                        </router-link>
-                    </li>
+                        <li>
+                            <router-link :to="`/user/${userId}/albums`" class="menu-link">
+                                <AlbumsIcon class="menu-icon" />
+                                <span>Albums</span>
+                            </router-link>
+                        </li>
+                    </div>
                 </template>
             </ul>
         </nav>
@@ -75,12 +65,13 @@ import UsersIcon from '../assets/icons/users.svg'
 import TodosIcon from '../assets/icons/todos.svg'
 import PostsIcon from '../assets/icons/posts.svg'
 import AlbumsIcon from '../assets/icons/albums.svg'
+import UserIcon from '../assets/icons/user-circle.svg'
+import '../assets/styles/Sidebar.scss'
 
 defineProps(['collapsed'])
 defineEmits(['toggle'])
 
 const route = useRoute()
-
 const isHomePage = computed(() => route.path === '/')
 const userId = computed(() => route.params.id)
 const user = ref([])
