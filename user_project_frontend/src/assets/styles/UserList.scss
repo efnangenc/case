@@ -1,0 +1,36 @@
+.userlist-title {
+  @apply p-5 text-2xl font-bold;
+}
+.user-cards {
+  @apply grid grid-cols-3 gap-12 p-6;
+}
+.cards-item {
+  @apply block p-4 border rounded-2xl shadow-md hover:shadow-xl transition-shadow;
+}
+.card-info {
+  @apply flex flex-col sm:flex-row items-center p-5 rounded space-x-8;
+}
+.allusers-icon {
+  @apply w-32 h-32;
+}
+.card-user-info {
+  @apply p-4 text-center sm:text-left;
+  h2 {
+    @apply text-lg font-bold;
+  }
+  p {
+    @apply text-sm;
+  }
+}
+.userdetail-info{
+    @apply ml-6 mb-6  grid grid-cols-1 gap-2
+}
+.detail-info{
+    @apply flex items-center space-x-2 mt-2 text-gray-500;
+    span{
+        @apply font-bold
+    }
+}
+.info-icon{
+    @apply h-7 w-7
+}

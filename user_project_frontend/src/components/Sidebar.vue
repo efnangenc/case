@@ -50,6 +50,9 @@
                             </router-link>
                         </li>
                     </div>
+                    <div class="sidebar-logo">
+                        <img :src="N2MobileLogo" alt="N2 Mobile Logo" />
+                    </div>
                 </template>
             </ul>
         </nav>
@@ -66,6 +69,7 @@ import TodosIcon from '../assets/icons/todos.svg'
 import PostsIcon from '../assets/icons/posts.svg'
 import AlbumsIcon from '../assets/icons/albums.svg'
 import UserIcon from '../assets/icons/user-circle.svg'
+import N2MobileLogo from '../assets/icons/logo.png'
 import '../assets/styles/Sidebar.scss'
 
 defineProps(['collapsed'])

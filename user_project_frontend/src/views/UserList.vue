@@ -2,55 +2,50 @@
   <MainLayout>
     <template #default>
       <div>
-        <h1 class="p-5 text-3xl font-semibold">All Users</h1>
-        <div v-if="users.length === 0" class="p-4">Loading...</div>
+        <h1 class="userlist-title">All Users</h1>
+        <div v-if="users.length === 0">Loading...</div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-4">
-          <router-link v-for="user in users" :key="user.id" :to="`/user/${user.id}/todos`"
-            class="block p-4 border rounded-lg shadow hover:shadow-xl transition-shadow bg-white text-gray-800">
-
-
-            <div
-              class="flex flex-col sm:flex-row items-center sm:items-start p-5 rounded space-y-4 sm:space-y-0 sm:space-x-4">
+        <div class="user-cards">
+          <router-link v-for="user in users" :key="user.id" :to="`/user/${user.id}/todos`" class="cards-item">
+            <div class="card-info">
               <!-- Resim/Avatar -->
-              <!-- <img src="https://via.placeholder.com/80" alt="Avatar" class="w-32 h-32 rounded-full border" /> -->
-              <div class="rounded-full border flex-shrink-0">
-                <UserIcon class="w-32 h-32 text-gray-400" />
+              <div>
+                <UserIcon class="allusers-icon" />
               </div>
               <!-- İçerik -->
-              <div class="flex-1 p-4 text-center sm:text-left">
-                <h2 class="text-lg font-bold">{{ user.name }}</h2>
-                <p class="text-sm text-gray-600">{{ user.email }}</p>
-                <p class="text-sm text-gray-600">{{ user.phone }}</p>
+              <div class="card-user-info">
+                <h2>{{ user.name }}</h2>
+                <p>{{ user.email }}</p>
+                <p>{{ user.phone }}</p>
               </div>
-
             </div>
 
+            <div class="userdetail-info">
+              <!-- Location başlığı ve ikon -->
+              <div class="detail-info">
+                <LocationIcon class="info-icon" />
+                <span>Location:</span>
+              </div>
+              <p>
+                {{ user.address.street }}, {{ user.address.suite }},<br />
+                {{ user.address.city }} - {{ user.address.zipcode }}
+              </p>
+              <!-- Company başlığı ve ikon -->
+              <div class="detail-info">
+                <CompanyIcon class="info-icon" />
+                <span>Company:</span>
+              </div>
+              <p>{{ user.company.name }}</p>
 
 
-            <!-- Location başlığı ve ikon -->
-            <div class="flex items-center space-x-2 mt-2 text-gray-500">
-              <LocationIcon class="h-5 w-5 text-gray-400" />
-              <span class="font-bold">Location:</span>
+              <!-- Website başlığı ve ikon -->
+              <div class="detail-info">
+                <WebsiteIcon class="info-icon" />
+                <span>Website:</span>
+              </div>
+              <p>Website: {{ user.website }}</p>
             </div>
-            <p class="text-sm text-gray-500">{{ user.address.city }}</p>
 
-            <!-- Company başlığı ve ikon -->
-            <div class="flex items-center space-x-2 mt-2 text-gray-500">
-              <CompanyIcon class="h-5 w-5 text-gray-400" />
-              <span class="font-bold">Company:</span>
-            </div>
-            <p class="text-sm text-gray-500">{{ user.company.name }}</p>
-
-
-            <!-- Website başlığı ve ikon -->
-            <div class="flex items-center space-x-2 mt-2 text-gray-500">
-              <WebsiteIcon class="h-5 w-5 text-gray-400" />
-              <span class="font-bold">Website:</span>
-            </div>
-            <p class="text-sm text-gray-500">Website: {{ user.website }}</p>
-
-            
           </router-link>
         </div>
       </div>
@@ -66,6 +61,7 @@ import CompanyIcon from '../assets/icons/company.svg'
 import LocationIcon from '../assets/icons/location.svg'
 import WebsiteIcon from '../assets/icons/website.svg'
 import UserIcon from '../assets/icons/user-circle.svg'
+import '../assets/styles/UserList.scss'
 
 const users = ref([])
 
