@@ -15,8 +15,6 @@
           </div>
         </div>
       </div>
-
-
     </template>
   </MainLayout>
 </template>
@@ -30,7 +28,6 @@ import LeftArrowIcon from '../assets/icons/left-arrow.svg'
 import '../assets/styles/AlbumDetail.scss'
 
 const route = useRoute()
-console.log('route.params:', route.params)
 const albumId = route.params.id
 console.log('Album ID:', albumId)
 
@@ -38,7 +35,6 @@ const photos = ref([])
 const albumTitle = ref('')
 
 onMounted(async () => {
-  console.log('Album ID:', albumId)
   const result = await getPhotosByAlbum(albumId)
   console.log('Photos:', result)
   photos.value = result

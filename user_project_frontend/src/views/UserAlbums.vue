@@ -45,8 +45,7 @@ onMounted(async () => {
   const albumsWithPhotos = await Promise.all(
     userAlbums.map(async (album) => {
       const photos = await getPhotosByAlbum(album.id)
-        console.log(`Album ${album.id} photos:`, photos) 
-      console.log(`foto sayısı ${photos.length}`)
+        console.log(`Album ${album.id} photos:`, photos)
       return {
         ...album,
         photos: photos.slice(0, 4)
@@ -55,6 +54,5 @@ onMounted(async () => {
     })
   )
   albums.value = albumsWithPhotos
-  console.log('Albüm + Fotoğraf birleşimi:', albums.value)
 })
 </script>

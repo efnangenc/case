@@ -19,8 +19,7 @@
                 <p>{{ user.phone }}</p>
               </div>
             </div>
-
-            <div class="userdetail-info">
+            <div class="userdetail-info">          
               <!-- Location başlığı ve ikon -->
               <div class="detail-info">
                 <LocationIcon class="info-icon" />
@@ -36,8 +35,6 @@
                 <span>Company:</span>
               </div>
               <p>{{ user.company.name }}</p>
-
-
               <!-- Website başlığı ve ikon -->
               <div class="detail-info">
                 <WebsiteIcon class="info-icon" />
@@ -45,7 +42,6 @@
               </div>
               <p>Website: {{ user.website }}</p>
             </div>
-
           </router-link>
         </div>
       </div>
