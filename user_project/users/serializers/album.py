@@ -1,15 +1,12 @@
 from rest_framework import serializers
 from ..models.album import Album
-from ..models.photo import Photo
-
-class PhotoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Photo
-        fields = ['id', 'album', 'title', 'url', 'thumbnailUrl']
+from ..serializers.photo import PhotoSerializer
 
 class AlbumSerializer(serializers.ModelSerializer):
+    userId = serializers.PrimaryKeyRelatedField(source='user', read_only=True)
     photos = PhotoSerializer(many=True, read_only=True)
 
     class Meta:
         model = Album
-        fields = ['id', 'user', 'title', 'photos']
+        fields = ['id', 'userId', 'title', 'photos']
+        

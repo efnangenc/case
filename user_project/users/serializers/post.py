@@ -1,15 +1,11 @@
 from rest_framework import serializers
 from ..models.post import Post
-from ..models.comment import Comment
-
-class CommentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Comment
-        fields = ['id', 'name', 'email', 'body']
+from ..serializers.comment import CommentSerializer
 
 class PostSerializer(serializers.ModelSerializer):
+    userId = serializers.PrimaryKeyRelatedField(source='user', read_only=True)
     comments = CommentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Post
-        fields = ['id', 'user', 'title', 'body', 'comments']
+        fields = ['id', 'userId', 'title', 'body', 'comments']

@@ -12,17 +12,17 @@ const routes = [
     component: UserList,
   },
   {
-    path: '/user/:id/todos',
+    path: '/users/:id/todos',
     name: 'UserTodos',
     component: UserTodos,
   },
   {
-    path: '/user/:id/posts',
+    path: '/users/:id/posts',
     name: 'UserPosts',
     component: UserPosts,
   },
   {
-    path: '/user/:id/albums',
+    path: '/users/:id/albums',
     name: 'UserAlbums',
     component: UserAlbums,
   },
