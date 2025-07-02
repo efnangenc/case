@@ -30,21 +30,21 @@
                     <hr />
                     <div class="menu">
                         <li>
-                            <router-link :to="`/user/${userId}/todos`" class="menu-link">
+                            <router-link :to="`/users/${userId}/todos`" class="menu-link">
                                 <TodosIcon class="menu-icon" />
                                 <span>Todos</span>
                             </router-link>
                         </li>
 
                         <li>
-                            <router-link :to="`/user/${userId}/posts`" class="menu-link">
+                            <router-link :to="`/users/${userId}/posts`" class="menu-link">
                                 <PostsIcon class="menu-icon" />
                                 <span>Posts</span>
                             </router-link>
                         </li>
 
                         <li>
-                            <router-link :to="`/user/${userId}/albums`" class="menu-link">
+                            <router-link :to="`/users/${userId}/albums`" class="menu-link">
                                 <AlbumsIcon class="menu-icon" />
                                 <span>Albums</span>
                             </router-link>

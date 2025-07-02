@@ -6,7 +6,7 @@
         <div v-if="users.length === 0">Loading...</div>
 
         <div class="user-cards">
-          <router-link v-for="user in users" :key="user.id" :to="`/user/${user.id}/todos`" class="cards-item">
+          <router-link v-for="user in users" :key="user.id" :to="`/users/${user.id}/todos`" class="cards-item">
             <div class="card-info">
               <!-- Resim/Avatar -->
               <div>
