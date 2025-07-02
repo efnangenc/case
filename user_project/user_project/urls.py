@@ -47,6 +47,7 @@ urlpatterns = [
 
     # Vue frontend ana sayfası
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
+    path('<path:path>', TemplateView.as_view(template_name='index.html')),  # Tüm diğer pathleri index.html’e yönlendir
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
