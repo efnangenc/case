@@ -11,11 +11,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   web:
-<<<<<<< HEAD
     image: user_project
-=======
-    build: .
->>>>>>> c5f69c8fff69a35e970cba52f335a3d807128034
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
