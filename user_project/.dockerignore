@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.tar.gz
+*.log
+*.sqlite3
+.env
+node_modules/
+.git/
+.vscode/
+.idea/
+user_project.tar.gz
