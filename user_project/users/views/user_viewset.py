@@ -8,7 +8,7 @@ from ..serializers.post import PostSerializer
 from ..serializers.album import AlbumSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()  # <-- Burası zorunlu
+    queryset = User.objects.all() 
     serializer_class = UserSerializer
 
     @action(detail=True, methods=['get'])
