@@ -29,7 +29,7 @@ Bu proje, Django REST Framework ve Vue.js kullanılarak oluşturulmuş RESTful b
 ## 1. Projeyi Klonlayın
 
 ```bash
-git clone https://github.com/kullaniciadi/case.git
+https://github.com/efnangenc/case.git
 ```
 
 ## 2. Komut Terminalini Açın ve Dizine Gidin
